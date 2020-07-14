@@ -8,7 +8,7 @@ export default class CreateUser1594343255826 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
@@ -16,22 +16,23 @@ export default class CreateUser1594343255826 implements MigrationInterface {
           {
             name: 'name',
             type: 'varchar',
-            isNullable: false,
           },
           {
             name: 'login',
             type: 'varchar',
-            isNullable: false,
           },
           {
             name: 'password',
             type: 'varchar',
-            isNullable: false,
           },
           {
             name: 'privileges',
             type: 'varchar',
-            isNullable: false,
+          },
+          {
+            name: 'updatedAt',
+            type: 'timestamp',
+            default: 'now()',
           },
         ],
       }),

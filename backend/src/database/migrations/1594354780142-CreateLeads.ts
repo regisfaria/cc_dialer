@@ -9,7 +9,7 @@ export default class CreateLeads1594354780142 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
@@ -27,7 +27,7 @@ export default class CreateLeads1594354780142 implements MigrationInterface {
           {
             name: 'dot',
             type: 'varchar',
-            isNullable: false,
+            isUnique: true,
           },
           {
             name: 'phoneNumber',
@@ -83,6 +83,16 @@ export default class CreateLeads1594354780142 implements MigrationInterface {
             name: 'operationClassification',
             type: 'varchar',
             isNullable: true,
+          },
+          {
+            name: 'createdAt',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updatedAt',
+            type: 'timestamp',
+            default: 'now()',
           },
         ],
       }),

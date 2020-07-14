@@ -8,15 +8,14 @@ export default class CreateProfiles1594406033381 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
           },
           {
             name: 'userId',
-            type: 'varchar',
-            isNullable: false,
+            type: 'uuid',
           },
           {
             name: 'image',
@@ -42,6 +41,16 @@ export default class CreateProfiles1594406033381 implements MigrationInterface {
             name: 'address',
             type: 'varchar',
             isNullable: true,
+          },
+          {
+            name: 'createdAt',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updatedAt',
+            type: 'timestamp',
+            default: 'now()',
           },
         ],
       }),
