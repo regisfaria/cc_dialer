@@ -1,11 +1,22 @@
 import { Router } from 'express';
+import { getCustomRepository } from 'typeorm';
+
+import UserRepository from '../repositories/UserRepository';
 
 import CreateUserService from '../services/CreateUserService';
 import CreateProfileService from '../services/CreateProfileService';
 
-const registerRouter = Router();
+const usersRouter = Router();
 
-registerRouter.post('/', async (request, response) => {
+usersRouter.get('/', async (request, response) => {
+  const userRepository = getCustomRepository(UserRepository);
+
+  const users = await userRepository.find();
+
+  return response.json(users);
+});
+
+usersRouter.post('/', async (request, response) => {
   try {
     const { name, login, password, privileges } = request.body;
 
@@ -28,4 +39,4 @@ registerRouter.post('/', async (request, response) => {
   }
 });
 
-export default registerRouter;
+export default usersRouter;
