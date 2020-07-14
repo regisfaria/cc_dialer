@@ -4,9 +4,9 @@ import { getCustomRepository } from 'typeorm';
 import LeadRepository from '../repositories/LeadRepository';
 import CreateLeadService from '../services/CreateLeadService';
 
-const leadRouter = Router();
+const leadsRouter = Router();
 
-leadRouter.get('/', async (request, response) => {
+leadsRouter.get('/', async (request, response) => {
   const leadRepository = getCustomRepository(LeadRepository);
 
   const leads = await leadRepository.find();
@@ -14,7 +14,7 @@ leadRouter.get('/', async (request, response) => {
   return response.json(leads);
 });
 
-leadRouter.post('/', async (request, response) => {
+leadsRouter.post('/', async (request, response) => {
   try {
     const {
       name,
@@ -58,4 +58,4 @@ leadRouter.post('/', async (request, response) => {
   }
 });
 
-export default leadRouter;
+export default leadsRouter;
