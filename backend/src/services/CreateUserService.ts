@@ -1,7 +1,8 @@
-import { getCustomRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import User from '../models/User';
-import UserRepository from '../repositories/UserRepository';
+
+import AppError from '../errors/AppError';
 
 interface Request {
   name: string;
@@ -17,22 +18,22 @@ export default class CreateUserService {
     password,
     privileges,
   }: Request): Promise<User> {
-    const userRepository = getCustomRepository(UserRepository);
+    const usersRepository = getRepository(User);
 
-    const loginAvailability = await userRepository.isValidLogin(login);
+    const loginExists = await usersRepository.findOne(login);
 
-    if (!loginAvailability) {
-      throw Error('Login already in use');
+    if (loginExists) {
+      throw new AppError('Login already in use');
     }
 
-    const user = userRepository.create({
+    const user = usersRepository.create({
       name,
       login,
       password,
       privileges,
     });
 
-    await userRepository.save(user);
+    await usersRepository.save(user);
 
     return user;
   }
