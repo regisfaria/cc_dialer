@@ -1,14 +1,15 @@
-import { getCustomRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import Profile from '../models/Profile';
-import ProfileRepository from '../repositories/ProfileRepository';
+import User from '../models/User';
 
 export default class CreateProfileService {
-  public async execute(userId: string): Promise<Profile> {
-    const profileRepository = getCustomRepository(ProfileRepository);
+  public async execute(user: User): Promise<Profile> {
+    const profileRepository = getRepository(Profile);
 
     const profile = profileRepository.create({
-      userId,
+      user,
+      userId: user.id,
     });
 
     await profileRepository.save(profile);

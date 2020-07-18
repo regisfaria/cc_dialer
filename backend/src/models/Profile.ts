@@ -4,12 +4,19 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
+import User from './User';
 
 @Entity('profiles')
 export default class Profile {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @OneToOne(() => User)
+  @JoinColumn({ name: 'userId' })
+  user: User;
 
   @Column()
   userId: string;
