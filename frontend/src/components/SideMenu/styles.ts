@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const SideMenuBox = styled.div`
   position: fixed;
   width: 256px;
@@ -27,7 +26,7 @@ export const MenuHeader = styled.div`
 export const MenuOption = styled.div`
   margin-top: 20px;
   border-bottom: 1px solid var(--divider);
-  
+
   a {
     display: block;
     padding: 16px;
@@ -37,7 +36,6 @@ export const MenuOption = styled.div`
     text-decoration: none;
     color: var(--table-black);
     transition: color 220ms;
-    
 
     img {
       width: 62px;
@@ -49,7 +47,7 @@ export const MenuOption = styled.div`
       margin-left: 0 16px;
       padding-left: 16px;
       justify-content: space-evenly;
-      
+
       strong {
         font-size: 20px;
         color: var(--black);
@@ -92,7 +90,6 @@ export const MenuOption = styled.div`
     & + a {
       padding-top: 10px;
     }
-
   }
 `;
 
@@ -106,7 +103,7 @@ export const Footer = styled.div`
   p {
     text-align: center;
 
-    a { 
+    a {
       text-decoration: none;
       color: var(--table-black);
     }

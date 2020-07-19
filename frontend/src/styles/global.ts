@@ -16,7 +16,7 @@ export default createGlobalStyle`
     --white: #FFFFFF;
     --divider: #EBEFF2;
   }
-  
+
   * {
     margin: 0;
     padding: 0;
