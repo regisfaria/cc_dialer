@@ -1,5 +1,6 @@
 import { getRepository } from 'typeorm';
 
+import { hash } from 'bcryptjs';
 import User from '../models/User';
 
 import AppError from '../errors/AppError';
@@ -26,10 +27,12 @@ export default class CreateUserService {
       throw new AppError('Login already in use');
     }
 
+    const hashedPassword = await hash(password, 8);
+
     const user = usersRepository.create({
       name,
       login,
-      password,
+      password: hashedPassword,
       privileges,
     });
 
