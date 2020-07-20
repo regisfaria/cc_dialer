@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import bg from '../assets/gplaypattern.png';
 
 export default createGlobalStyle`
   :root {
@@ -26,6 +27,7 @@ export default createGlobalStyle`
 
   body {
     background: #E5E5E5;
+    background-image: url(${bg});
     -webkit-font-smoothing: antialiased;
   }
 
