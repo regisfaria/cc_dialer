@@ -1,7 +1,6 @@
-import { getCustomRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import Lead from '../models/Lead';
-import LeadRepository from '../repositories/LeadRepository';
 
 interface Request {
   name: string;
@@ -37,7 +36,7 @@ export default class CreateProfileService {
     powerUnits,
     operationClassification,
   }: Request): Promise<Lead> {
-    const leadRepository = getCustomRepository(LeadRepository);
+    const leadRepository = getRepository(Lead);
 
     const lead = leadRepository.create({
       name,
