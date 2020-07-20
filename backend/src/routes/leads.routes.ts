@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { getCustomRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
-import LeadRepository from '../repositories/LeadRepository';
+import Lead from '../models/Lead';
 import CreateLeadService from '../services/CreateLeadService';
 
 const leadsRouter = Router();
 
 leadsRouter.get('/', async (request, response) => {
-  const leadRepository = getCustomRepository(LeadRepository);
+  const leadRepository = getRepository(Lead);
 
   const leads = await leadRepository.find();
 
