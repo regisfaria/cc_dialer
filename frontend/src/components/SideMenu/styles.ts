@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const SideMenuBox = styled.div`
-  position: fixed;
+  position: absolute;
   width: 256px;
+  height: 976px;
   left: 0px;
   top: 0px;
   bottom: 0px;
   background-color: var(--white);
-  box-shadow: 8px 0 5px -2px var(--divider);
+  box-shadow: 1px 0 0px 0px var(--divider);
 `;
 
 export const MenuHeader = styled.div`
@@ -48,6 +49,14 @@ export const MenuOption = styled.div`
       padding-left: 16px;
       justify-content: space-evenly;
 
+      svg {
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
+        color: var(--icon-gray);
+        transition: color 220ms;
+      }
+
       strong {
         font-size: 20px;
         color: var(--black);
@@ -75,6 +84,8 @@ export const MenuOption = styled.div`
     }
 
     svg {
+      position: relative;
+      top: 5px;
       color: var(--icon-gray);
       transition: color 220ms;
     }
