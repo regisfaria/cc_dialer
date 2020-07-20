@@ -36,6 +36,7 @@ export const LoginWindow = styled.div`
 export const Form = styled.form`
   div {
     padding: 12px;
+    margin-top: 80px;
     display: flex;
     align-content: center;
     align-items: center;
