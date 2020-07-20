@@ -21,7 +21,11 @@ export default class CreateUserService {
   }: Request): Promise<User> {
     const usersRepository = getRepository(User);
 
-    const loginExists = await usersRepository.findOne(login);
+    const loginExists = await usersRepository.findOne({
+      where: {
+        login,
+      },
+    });
 
     if (loginExists) {
       throw new AppError('Login already in use');
