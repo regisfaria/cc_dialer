@@ -30,7 +30,7 @@ export const LoginWindow = styled.div`
   border-radius: 40px;
 
   background: var(--white) url(${logoImg}) no-repeat top;
-  box-shadow: 0 2px 10px 1px var(--gray);
+  box-shadow: 0 2px 10px 1px var(--divider);
 `;
 
 export const Form = styled.form`

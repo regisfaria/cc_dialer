@@ -125,14 +125,16 @@ export const CalendarSection = styled.div`
   height: 380px;
   right: 38px;
   top: 96px;
+  border-radius: 20px;
 
   background-color: var(--white);
-  box-shadow: 0 1px 10px 4px var(--divider);
+  box-shadow: 0 1px 1px 1px var(--divider);
 
   .react-calendar {
     max-width: 100%;
     background: white;
     line-height: 1.125em;
+    border-radius: 20px;
 
     padding-left: 5px;
     padding-right: 5px;
@@ -262,7 +264,8 @@ export const RecentLeads = styled.div`
   height: 380px;
   right: 38px;
   top: 536px;
+  border-radius: 20px;
 
   background-color: var(--white);
-  box-shadow: 0 1px 10px 4px var(--divider);
+  box-shadow: 0 1px 1px 1px var(--divider);
 `;
