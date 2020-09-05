@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface RecentLeadInfoProps {
+  alterColor?: boolean;
+}
 
 export const IncomingTasks = styled.div`
   position: absolute;
@@ -35,6 +39,11 @@ export const Task = styled.div`
   padding: 24px;
   border-radius: 10px;
   box-shadow: 0 1px 4px 2px var(--divider);
+  transition: transform 400ms;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   & + div {
     margin-top: 45px;
@@ -258,14 +267,92 @@ export const CalendarSection = styled.div`
 `;
 
 export const RecentLeads = styled.div`
-  display: flex;
   position: absolute;
   width: 445px;
   height: 380px;
   right: 38px;
   top: 536px;
   border-radius: 20px;
+  text-align: center;
+  justify-content: center;
 
   background-color: var(--white);
   box-shadow: 0 1px 1px 1px var(--divider);
+
+  #recent-leads-title {
+    width: 100%;
+    height: 10%;
+    background-color: #fcfcfc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid var(--divider);
+
+    strong {
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--table-black);
+    }
+
+    svg {
+      margin-left: 5px;
+      position: relative;
+      top: 2px;
+      color: var(--icon-gray);
+    }
+
+    & + div {
+      margin: 1px 0;
+    }
+  }
+`;
+
+export const Lead = styled.div<RecentLeadInfoProps>`
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  width: 100%;
+  background: var(--divider);
+  padding: 0 10px;
+  transition: background-color 0.2s;
+
+  ${props =>
+    props.alterColor &&
+    css`
+      background: var(--white);
+    `}
+
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      text-decoration: none;
+    }
+
+    svg {
+      margin: 0 5px;
+      color: var(--green);
+    }
+
+    strong {
+      font-size: 14px;
+      color: var(--table-black);
+    }
+
+    p {
+      font-size: 12px;
+      color: var(--table-black);
+    }
+  }
+
+  p {
+    font-size: 10px;
+    color: var(--table-black);
+  }
+
+  &:hover {
+    background: var(--accent-blue);
+  }
 `;

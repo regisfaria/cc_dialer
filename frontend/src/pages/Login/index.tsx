@@ -2,14 +2,11 @@ import React from 'react';
 import { FiLogIn, FiKey } from 'react-icons/fi';
 import { FaUserAlt } from 'react-icons/fa';
 
-import { Header, LoginWindow, Form, Footer } from './styles';
+import { LoginWindow, Form } from './styles';
 
 const Login: React.FC = () => {
   return (
     <>
-      <Header>
-        <strong>Complete Compliance Dialer</strong>
-      </Header>
       <LoginWindow>
         <Form>
           <div>
@@ -31,19 +28,6 @@ const Login: React.FC = () => {
           </div>
         </Form>
       </LoginWindow>
-      <Footer>
-        <p>
-          Complete Compliance © developed by
-{' '}
-          <a
-            href="https://github.com/regisfaria"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Régis Faria
-          </a>
-        </p>
-      </Footer>
     </>
   );
 };

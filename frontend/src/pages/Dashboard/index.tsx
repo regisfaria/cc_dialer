@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
+import { FiExternalLink, FiUsers } from 'react-icons/fi';
 
 import SideMenu from '../../components/SideMenu';
 import SearchBar from '../../components/SearchBar';
@@ -11,7 +12,9 @@ import {
   CalendarSection,
   Task,
   Tag,
+  Lead,
 } from './styles';
+
 import ProfileImg from '../../assets/profile-assets/me.jpeg';
 
 const Dashboard: React.FC = () => {
@@ -121,7 +124,109 @@ const Dashboard: React.FC = () => {
         <Calendar className="react-calendar" />
       </CalendarSection>
 
-      <RecentLeads />
+      <RecentLeads>
+        <div id="recent-leads-title">
+          <strong>
+            Recent Leads <FiUsers />
+          </strong>
+        </div>
+
+        <Lead>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead alterColor>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead alterColor>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead alterColor>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+
+        <Lead alterColor>
+          <div>
+            <p>
+              <strong>Regis Faria</strong> created a new lead.
+            </p>
+            <Link to="/leads/id" target="_blank">
+              <FiExternalLink size={14} />
+            </Link>
+          </div>
+          <p>X Hours ago</p>
+        </Lead>
+      </RecentLeads>
     </>
   );
 };
